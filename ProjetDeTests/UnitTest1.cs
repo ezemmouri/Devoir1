@@ -41,14 +41,15 @@ namespace ProjetDeTests
         public void CalculerMontantRembourseTest()
         {
             // Un livre achété 24 euros depuis 15 jours avec un état "Très abimé" en étant non membre
-            int nbJour1 = 13;
-            string categorie1 = "Informatique";
-            double montantRemb1 = Condition.CalculerMontantRembourse(nbJour1, categorie1, false, "Tres abime", 145);
-            Assert.AreEqual(72.5, montantRemb1);
+            int nbJour1 = 15;
+            string categorie1 = "Livres";
+            double montantRemb1 = Condition.CalculerMontantRembourse(nbJour1, categorie1, false, "Tres abime", 24);
+            Assert.AreEqual(12, montantRemb1);
             // Un livre achété 24 euros depuis 15 jours avec un état "Bon" en étant membre
             int nbJour2 = 15;
             string categorie2 = "Livres";
             double montantRemb2 = Condition.CalculerMontantRembourse(nbJour2, categorie2, true, "Bon", 24);
+            Assert.AreEqual(21.6, montantRemb2);
         }
 
         [TestMethod()]
