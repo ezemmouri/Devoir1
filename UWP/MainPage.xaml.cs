@@ -33,12 +33,15 @@ namespace UWP
 
         private  void CmdValider_Click(object sender, RoutedEventArgs e)
         {
-            // A vous de jouer :)
+            if(txtPrix.Text == " ")
+            {
+                var message = new MessageDialog("Veuillez saisir un prix");
+            }
         }
 
         private void SldNbJours_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-            // A vous de jouer :)
+            lblNbJours.Text = Convert.ToInt16(sldNbJours.Value).ToString();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
